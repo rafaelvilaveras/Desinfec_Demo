@@ -5,7 +5,8 @@ import '../css/App.css';
 import '../css/pie-chart.css';
 
 
-const PieChart = ({}) => {
+const PieChart = ({data}) => {
+
     return ( 
         <>
             <div className='flex-column pc-container'>
@@ -14,10 +15,12 @@ const PieChart = ({}) => {
                     type='pie'
                     width={'100%'}
 
-                    series={[100, 200, 300, 400, 500]}
+                    // Inserir valores do gráfico aqui apenas números.
+                    series={data.map((item, key)=>{ return item.value; })}
 
                     options={{
-                        labels:['teste 1', 'teste 2', 'teste 3', 'teste 4', 'teste 5']
+                        // Inserir nome das variáveis aqui
+                        labels:data.map((item, key)=>{ return item.name; })
                     }}
 
 

@@ -22,6 +22,33 @@ const Home = () => {
     //     alert('Data: ' + date + ' Semestre: ' + semester);
     // },[date, semester]);
 
+    const data = [
+        {
+            name: 'Desinsetização',
+            value: 500
+        },
+        {
+            name: 'Desratização',
+            value: 100
+        },
+        {
+            name: 'Descupinização',
+            value: 50
+        },
+        {
+            name: 'Controle de aracnídeos',
+            value: 25
+        },
+        {
+            name: 'Controle de carrapatos',
+            value: 20
+        },
+        {
+            name: 'Sanitização de ambientes',
+            value: 5
+        },
+    ]
+
     
 
 
@@ -50,11 +77,9 @@ const Home = () => {
             <div className='flex-row h-chart-container'>
 
                 <div className='h-chartbox'>
-                    <PieChart/>
-                </div>
-                
-                <div className='h-chartbox'>
-                    <PieChart/>
+                    <PieChart
+                        data = {data}
+                    />
                 </div>
 
             </div>
