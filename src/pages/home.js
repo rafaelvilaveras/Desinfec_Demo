@@ -8,11 +8,9 @@ import '../css/content.css';
 
 import PieChart from '../components/pie-chart';
 
-const Home = () => {
+const Home = ({tYear, tMonth}) => {
 
-    const today = new Date();
-    const tMonth = today.getMonth()+1 > 9 ? (today.getMonth()+1) : '0' + (today.getMonth()+1);
-    const tYear = today.getFullYear();
+
 
     const [date, setDate] = useState(tYear + '-' + tMonth);
     // eslint-disable-next-line

@@ -56,6 +56,43 @@
 
 /* Schedule CSS */
 
-.teste {
+.ca-container {
     width: 100%;
+    height: 75vh;
+    border: 1px solid var(--gray-border);
+    background-color: var(--gray-bg);
+}
+
+.ca-content {
+    width: 100%;
+}
+
+.ca-hours {
+    width: 10%;
+    height: 100%;
+    border-right: 1px solid var(--gray-border);
+    justify-content: space-around;
+    /* align-items: center; */
+}
+
+.ca-hours span {
+    display: flex;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.ca-header {
+    justify-content: space-around;
+}
+
+.ca-header span {
+    flex: 1;
+    text-align: center;
+    border-bottom: 1px solid var(--gray-border);
+}
+
+.ca-header-border {
+    border-right: 1px solid var(--gray-border);
 }

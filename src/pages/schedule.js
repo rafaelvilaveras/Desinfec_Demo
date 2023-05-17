@@ -4,16 +4,19 @@ import { MdOutlineCalendarMonth } from 'react-icons/md';
 import '../css/App.css';
 import '../css/content.css';
 
-const Schedule = () => {
+import Calendar from '../components/calendar';
+
+const Schedule = ({tDay, tMonth}) => {
     return ( 
         <div className='flex-column c-inner-container'>
             <div className='flex-row c-title'>
                 <MdOutlineCalendarMonth/>
                 <span>Agenda</span>
             </div>
-            <div className='flex-column'>
-              
-            </div>
+            <Calendar
+                tDay={tDay}
+                tMonth={tMonth}
+            />
         </div>
      );
 }

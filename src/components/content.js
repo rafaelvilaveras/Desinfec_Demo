@@ -8,13 +8,25 @@ import Schedule from '../pages/schedule';
 import Scheduling from '../pages/scheduling';
 
 const Content = ({index}) => {
+
+    const today = new Date();
+    const tDay = today.getDate();
+    const tMonth = today.getMonth()+1 > 9 ? (today.getMonth()+1) : '0' + (today.getMonth()+1);
+    const tYear = today.getFullYear();
+
     return ( 
         <div className='c-container'>
             <div className={index === 1 ? ' c-content ' : ' display-none '}>
-                <Home/>
+                <Home
+                    tYear={tYear}
+                    tMonth={tMonth}
+                />
             </div>
             <div className={index === 2 ? ' c-content ' : ' display-none '}>
-                <Schedule/>
+                <Schedule
+                    tDay={tDay}
+                    tMonth={tMonth}
+                />
             </div>
             <div className={index === 3 ? ' c-content ' : ' display-none '}>
                 <Scheduling/>
