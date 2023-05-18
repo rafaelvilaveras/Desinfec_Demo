@@ -7,18 +7,37 @@ import '../css/App.css';
 import '../css/content.css';
 
 import PieChart from '../components/pie-chart';
+import axios from 'axios';
 
 const Home = ({tYear, tMonth}) => {
 
 
 
     const [date, setDate] = useState(tYear + '-' + tMonth);
+    const [services, setServices] = useState([])
+    const authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiSm9obiIsImxhc3RuYW1lIjoiRG9lIiwicm9sZV9pZCI6MSwicGhvbmUiOiI1NTUtNTU1LTU1NTUiLCJlbWFpbCI6ImpvaG5kb2VAZXhhbXBsZS5jb20iLCJpYXQiOjE2ODQ0MjY5OTgsImV4cCI6MTY4NDQzNDE5OH0.9Yxo-3W1gfCuJvPx5RRsHANxC23vv-_Vk-tHjWfjw7Q'
+
     // eslint-disable-next-line
     const [semester, setSem] = useState(1);
+    
+    useEffect(() => {
+        axios
+          .get(`${process.env.REACT_APP_API_BASE_URL}/service/list`, {
+            headers: {
+              Authorization: `Bearer ${authToken}`,
+              Accept: 'application.json',
 
-    // useEffect(()=>{
-    //     alert('Data: ' + date + ' Semestre: ' + semester);
-    // },[date, semester]);
+            },
+          })
+          .then((response) => {
+            setServices(response.data);
+            console.log(services);
+          })
+          .catch((error) => {
+            // Handle error
+        });
+    },[]);
+
 
     const data = [
         {

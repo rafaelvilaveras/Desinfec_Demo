@@ -11,6 +11,7 @@ const Content = ({index}) => {
 
     const today = new Date();
     const tDay = today.getDate();
+    const tSem = today.getDay();
     const tMonth = today.getMonth()+1 > 9 ? (today.getMonth()+1) : '0' + (today.getMonth()+1);
     const tYear = today.getFullYear();
 
@@ -24,8 +25,8 @@ const Content = ({index}) => {
             </div>
             <div className={index === 2 ? ' c-content ' : ' display-none '}>
                 <Schedule
-                    tDay={tDay}
                     tMonth={tMonth}
+                    tYear={tYear}
                 />
             </div>
             <div className={index === 3 ? ' c-content ' : ' display-none '}>

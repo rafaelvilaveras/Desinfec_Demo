@@ -8,6 +8,7 @@
 
 .n1-content {
     width: 95%;
+    height: 100%;
     max-width: 1560px;
     justify-content: space-between;
 }
