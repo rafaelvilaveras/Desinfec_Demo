@@ -34,3 +34,13 @@
     background-color: transparent;
     cursor: pointer;
 }
+
+.n1-img-container {
+    display: flex;
+    width: 4vw;
+}
+
+.n1-img-container img {
+    width: 100%;
+    height: 100%;
+}

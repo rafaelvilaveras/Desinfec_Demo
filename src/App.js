@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react';
-import Greating from './components/greating';
-import Navbar from './components/navbar';
+import { Route, Routes } from 'react-router-dom';
+
 import './css/App.css';
-import Content from './components/content';
+
+import Navbar from './components/navbar';
+import Hub from './pages/hub';
+import Login from './pages/Login';
 
 function App() {
 
-  const logged = true;
-  
-  const [content, setContent] = useState(1);
-  
+  const [logged, setLogged] = useState(false);
+    
   function initAW(){
     const aux = document.getElementsByClassName('App')[0]?.clientWidth
 
@@ -27,22 +28,19 @@ function App() {
 
   return (
     <>
+
       <Navbar
         type={1}
         logged={logged}
+        setLogged={setLogged}
       />
       <div className={appWidth > 1500 ? " flex-column App  App-sb " : " flex-column App "}>
-        <Greating/>
-        <div className=' flex-row App-content '>
-          <Navbar
-            type={2}
-            setContent={setContent}
-            logged={logged}
+        <Routes>
+          <Route
+            path='/'
+            element={logged ? <Hub/> : <Login/>}
           />
-          <Content
-            index={content}
-          />
-        </div>
+        </Routes>
       </div>
     </>
   );

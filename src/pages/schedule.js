@@ -16,13 +16,15 @@ const Schedule = ({tMonth, tYear}) => {
                 <MdOutlineCalendarMonth/>
                 <span>Agenda</span>
             </div>
-            <input 
-                className='h-options-content' 
-                type='month' 
-                min='2000-01' 
-                value={date} 
-                onChange={(e)=>{setDate(e.target.value)}}
-            />
+            <div className='flex-row h-options'>
+                <input 
+                    className='h-options-content' 
+                    type='month' 
+                    min='2000-01' 
+                    value={date} 
+                    onChange={(e)=>{setDate(e.target.value)}}
+                />
+            </div>
             <Calendar
                 month={date?.split('-')[1]}
                 year={date?.split('-')[0]}
