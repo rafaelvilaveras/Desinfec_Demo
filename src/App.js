@@ -9,6 +9,7 @@ import Login from './pages/Login';
 
 function App() {
 
+  //  Mude o status de logado aqui
   const [logged, setLogged] = useState(false);
     
   function initAW(){
